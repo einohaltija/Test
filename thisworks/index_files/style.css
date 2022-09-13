@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Russo One");
+@import url("https://fonts.googleapis.com/css?family=Abel");
+@import url("https://fonts.googleapis.com/css?family=Akshar");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface");
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+
+
+* {
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+html{
+  height:100%;
+  padding: 0;
+	height: fit-content;
+	min-height:100%;
+}
+
+body {
+  font-family:"Quicksand", "Open Sans", "PT Sans", Calibri, Tahoma, sans-serif;
+     background: linear-gradient(to top right, #91b9bf 0%, #665380 100%);
+  height: fit-content;
+	min-height:100%;
+  padding: 0;
+}
+
+
+header {
+  background:#333;
+	background-image: url("images/bridge.jpg");
+	background-size: cover;
+background-position: bottom;
+}
+
+.main-heading {
+	font-family: "Exo", "Open Sans", "PT Sans", Calibri, Tahoma, sans-serif;
+  text-align: center;
+  font-size:64px;
+  font-weight:bold;
+  padding:96px 32px;
+   color:#eee;
+}
+
+
+.main-heading h1 {
+	margin: 0;
+	background-image: linear-gradient(90deg, #c4d0f5, #1f232e);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+	letter-spacing: 0.03em;
+	-webkit-text-stroke: 4px black;
+}
+
+.alert {
+	color: red;
+	font-weight: bold;
+}
+
+
+
+#mainsection {
+	padding: 0 16px 32px 16px;
+	font-size: 14px;
+	color: white;
+}
+
+#mainsection a:visited {
+	color: white;
+}
+
+/* Desktop nav */
+.desktop-nav {
+	background:#313b57;
+	width: 100%;
+	height: 33.5px;
+}
+
+
+nav {
+  float:right;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+
+nav ul a {
+  min-width:160px;
+	font-family: "Abel", "PT Sans", Calibri, sans-serif;
+	padding: 8px 16px;
+	display: block;
+	text-decoration: none;
+	font-size: 14px;
+	color:#fff;
+	background:#313b57;
+}
+
+
+nav ul a:hover {
+  background:#435091;
+}
+
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  box-shadow: 3px 2px 2px -1px rgba(0, 0, 0, .32);
+}
+
+
+nav ul ul a {
+ min-width:160px;
+}
+
+
+.mobile-nav {
+	font-family: "Abel", "Open Sans", "PT Sans", Calibri, sans-serif;
+  display:none;
+}
+
+#toggle-nav {
+  display:none;
+}
+
+i {
+  margin-left: 8px;
+}
+
+/* For elements where we don't want highlighted background during click */
+.noSelect {
+    -webkit-tap-highlight-color: transparent; 
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.noSelect:focus {
+    outline: none !important;
+}
+
+
+/* Mobile nav */
+
+@media(max-width:600px) {
+	
+   .main-heading h1 {
+	   -webkit-text-stroke: 2px black;
+		font-size: 64px;
+		letter-spacing: none;
+   }	
+	
+  .desktop-nav {
+    display: none;
+  }
+
+	.formwrapper h1 {
+		text-align: center;
+	}
+
+  #toggle-nav {
+    display:block;
+    position: absolute;
+    top: 10px;
+    right:14px;
+    font-size:0px; 
+    background: transparent;
+	color:blue;
+    padding: 0px 0px;
+    border-radius:50%;
+    transition: .5s;
+    cursor:pointer;
+	filter: contrast(90%);
+  }
+	
+  #toggle-nav.open {
+    transform: rotate(360deg);
+  }
+
+  .mobile-nav {
+    display: block;
+    max-height:0;
+    overflow:hidden;
+    transition: .3s ease-in-out;
+  }
+
+  .mobile-nav.open {
+    max-height:260px;
+	
+  }
+
+  .mobile-nav ul a {
+    display:block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color:#fff;
+    background:#313b57;
+  }
+
+  .mobile-nav ul ul  {
+    margin-left: 4px;
+    display:none;
+  }
+
+  .mobile-nav ul ul a {
+	background: #313b57;
+  }
+
+
+  .mobile-nav {
+    display: block;
+    max-height:0;
+    overflow:hidden;
+    transition: .4s ease-in-out;
+  }
+}
