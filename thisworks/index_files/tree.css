@@ -1,0 +1,246 @@
+:root {
+  --line-color: #666;
+  --line-width: .1em;
+  --gutter: .5em;
+}
+
+
+
+.tree {
+  /*margin: 0 0 calc(var(--gutter) * 2);
+  text-align: center;*/
+  /* _________ */
+  /* | */
+  /* The root node doesn't connect upwards */
+}
+
+.tree, .tree ul, .tree li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.tree, .tree ul {
+  /*display: table;*/
+}
+.tree ul {
+	    list-style: none;
+    padding-left: 32px;
+  /*width: 100%;*/
+}
+.tree li {
+	/*margin-left: 15px;*/
+	/*border: 1px solid black;*/
+  /*display: table-cell;
+  padding: var(--gutter) 0;
+  vertical-align: top;*/
+}
+
+.tree li::before, .tree li::after {
+    content: "";
+    position: absolute;
+    left: -12px;
+}
+ 
+.tree li:before {
+	    border-top: 1px solid white;
+    top: 24px;
+    width: 16px;
+    height: 0;
+	
+  /*content: "";
+  left: 0;
+  outline: solid calc(var(--line-width) /2) var(--line-color);
+  position: absolute;
+  right: 0;
+  top: 0;*/
+}
+
+.tree li::after {
+    border-left: 1px solid white;
+    height: 100%;
+    width: 0px;
+    top: 0px;
+}
+
+.tree ul > li:last-child::after {
+    height: 24px;
+}
+
+.tree li:first-child:before {
+  /*left: 50%;*/
+}
+.tree li:last-child:before {
+  /*right: 50%;*/
+}
+
+.tree [contenteditable] {
+  cursor: text;
+}
+.tree .selected {
+  border-color: #009;
+  border-style: dashed;
+  -webkit-box-shadow: 0 0 var(--gutter) var(--line-width) rgba(0, 0, 255, 0.3);
+  -moz-box-shadow: 0 0 var(--gutter) var(--line-width) rgba(0, 0, 255, 0.3);
+  box-shadow: 0 0 var(--gutter) var(--line-width) rgba(0, 0, 255, 0.3);
+}
+
+
+
+.toolbutton {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff;
+  border: solid 1px black;
+  cursor: pointer;
+  font-size: 1em;
+  line-height: 1.2em;
+  padding: 0.4em 1em;
+  position: relative;
+}
+.toolbutton:focus, .toolbutton:hover {
+  outline: 0.1em dotted blue;
+  outline-offset: -0.5em;
+}
+
+input[type=range] {
+  display: block;
+  width: 100%;
+}
+
+input[type=color] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  height: 2em;
+  padding: 0;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.toolbar {
+  background: #62728c;
+  font-size: 0.9em;
+  left: 0;
+  margin: 0;
+  padding: var(--gutter);
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  transform: translate(0, -100%);
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.toolbar.show {
+  transform: translate(0, 0);
+}
+
+ins {
+  background: #e9ebf5;
+  border: solid calc(var(--line-width) /2) var(--line-color);
+  display: inline-block;
+  font-size: 0.8em;
+  left: -1em;
+  margin: 1em 0 0;
+  padding: 0.2em 0.5em;
+  position: absolute;
+  right: -1em;
+  text-decoration: none;
+  top: 100%;
+}
+ins:before, ins:after {
+  border: solid 1em transparent;
+  border-top: none;
+  content: "";
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, 0);
+}
+ins:before {
+  border-bottom-color: var(--line-color);
+  bottom: 100%;
+}
+ins:after {
+  bottom: calc(100% - var(--line-width));
+  border-bottom-color: #e9ebf5;
+}
+
+ins {
+  opacity: 0;
+  transition: all 0.2s ease;
+  transform: scale(0, 0);
+}
+
+.js-confirm .confirm, .js-root .root {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.grid {
+  display: flex;
+  width: 100%;
+}
+.grid > * {
+  flex: 1;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+/*
+	Buttons in tree
+*/
+
+
+
+.button2 {
+	margin: 8px 0 0 0;
+  z-index: 1;
+  background-color: #56659c; /*#0078d0;*/
+  border: 0;
+  border-radius: 32px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Akshar", "Open Sans", "PT Sans", Calibri, Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  outline: 0;
+  padding: 6px 14px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  
+}
+
+.button2:before {
+  background-color: initial;
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 16px;
+  content: "";
+  height: 70%;
+  left: 4%;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  transition: all .3s;
+  width: 92%;
+}
+
+
+
+.button2:focus, .button2:hover {
+  box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+  transform: scale(1.15);
+  outline: 1px outset white;
+  /*outline-offset: -0.2em;*/
+}
